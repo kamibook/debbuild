@@ -1,0 +1,11 @@
+#!/bin/sh
+set -e
+
+case "$1" in
+    install|upgrade)
+        if systemctl is-active --quiet steamp; then
+            systemctl stop steamp
+        fi
+        ;;
+esac
+exit 0
